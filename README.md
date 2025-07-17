@@ -1,4 +1,4 @@
-# EY Rill Dashboards
+# General Ledger Dashboards
 
 A collection of Rill dashboards and metrics for general ledger data analysis.
 
