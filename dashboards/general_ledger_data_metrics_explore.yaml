@@ -30,7 +30,7 @@ defaults:
     - Region
     - Entity
     - Currency
-  time_range: P7D
+  time_range: inf
 
 time_ranges:
   - inf

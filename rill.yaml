@@ -1,6 +1,6 @@
 compiler: rillv1
 
-display_name: "EY Sample Project"
+display_name: "General Ledger"
 
 # These are example mock users to test your security policies.
 # Learn more: https://docs.rilldata.com/manage/security
