@@ -16,7 +16,7 @@ Below are some example visuals from the dashboards:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/rilldata/rill-general-ledger.git
+   git clone https://github.com/medriscoll/rill-general-ledger.git
    cd rill-general-ledger
    ```
 
