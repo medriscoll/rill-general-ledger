@@ -1,0 +1,13 @@
+# Model YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/models
+
+type: model
+materialize: true
+
+sql: |
+  SELECT * from general_ledger_part001
+  union
+  SELECT * from general_ledger_part002
+  union
+  SELECT * from general_ledger_part003
+  

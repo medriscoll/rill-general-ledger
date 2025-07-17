@@ -1,0 +1,42 @@
+# Explore YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/explore-dashboards
+
+type: explore
+
+display_name: "General Ledger Data Metrics dashboard"
+metrics_view: general_ledger_data_metrics
+
+dimensions: '*'
+measures: '*'
+defaults:
+  measures:
+    - total_debit_amount_measure
+    - total_credit_amount_measure
+    - average_debit_amount_measure
+    - average_credit_amount_measure
+    - max_debit_amount_measure
+    - max_credit_amount_measure
+    - min_debit_amount_measure
+    - min_credit_amount_measure
+    - total_transactions_measure
+    - distinct_accounts_measure
+  dimensions:
+    - TransactionType
+    - AccountName
+    - AccountType
+    - Department
+    - SourceSystem
+    - Product
+    - Region
+    - Entity
+    - Currency
+  time_range: P7D
+
+time_ranges:
+  - inf
+  - PT15M 
+  - PT1H
+  - P7D
+  - P4W
+  - rill-TD ## Today
+  - rill-WTD ## Week-To-date

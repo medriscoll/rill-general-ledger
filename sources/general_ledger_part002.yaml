@@ -1,0 +1,8 @@
+# Model YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/models
+
+type: model
+
+sql: |
+  SELECT '' as _file, '' as _path, *
+  FROM read_parquet('https://agreeable-data-public.s3.amazonaws.com/sampleeydata/gl_data_1b_part002.parquet') 

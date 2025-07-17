@@ -1,0 +1,63 @@
+# Explore YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/canvas-dashboards
+
+type: canvas
+display_name: "Canvas Dashboard"
+defaults:
+  time_range: PT24H
+  comparison_mode: time
+rows:
+  - items:
+      - kpi_grid:
+          metrics_view: general_ledger_data_metrics
+          measures:
+            - total_debit_amount_measure
+            - total_credit_amount_measure
+            - average_debit_amount_measure
+            - average_credit_amount_measure
+          comparison:
+            - delta
+            - percent_change
+        width: 12
+    height: 40px
+  - items:
+      - area_chart:
+          color: hsl(246, 66%, 50%)
+          description: ""
+          metrics_view: general_ledger_data_metrics
+          title: ""
+          x:
+            field: PostingDate
+            limit: 20
+            sort: -y
+            type: temporal
+          y:
+            field: total_credit_amount_measure
+            type: quantitative
+            zeroBasedOrigin: true
+        width: 12
+  - items:
+      - leaderboard:
+          dimensions:
+            - Region
+            - Product
+            - SourceSystem
+            - TransactionType
+          measures:
+            - total_debit_amount_measure
+          metrics_view: general_ledger_data_metrics
+          num_rows: 7
+        width: 12
+    height: 40px
+  - items:
+      - table:
+          columns:
+            - SourceSystem
+            - Department
+            - Product
+            - total_debit_amount_measure
+            - total_credit_amount_measure
+            - average_debit_amount_measure
+          metrics_view: general_ledger_data_metrics
+        width: 12
+    height: 40px

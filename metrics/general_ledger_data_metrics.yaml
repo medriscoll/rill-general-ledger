@@ -1,0 +1,130 @@
+# Metrics view YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+version: 1
+type: metrics_view
+
+display_name: General Ledger Data Metrics
+model: general_ledger_model
+timeseries: PostingDate
+
+dimensions:
+  - name: JournalEntryID
+    display_name: Journalentryid
+    column: JournalEntryID
+  - name: BatchID
+    display_name: Batchid
+    column: BatchID
+  - name: DocumentNumber
+    display_name: Documentnumber
+    column: DocumentNumber
+  - name: ReferenceNumber
+    display_name: Referencenumber
+    column: ReferenceNumber
+  - name: TransactionType
+    display_name: Transactiontype
+    column: TransactionType
+  - name: AccountNumber
+    display_name: Accountnumber
+    column: AccountNumber
+  - name: AccountName
+    display_name: Accountname
+    column: AccountName
+  - name: AccountType
+    display_name: Accounttype
+    column: AccountType
+  - name: Department
+    display_name: Department
+    column: Department
+  - name: CostCenter
+    display_name: Costcenter
+    column: CostCenter
+  - name: ProjectCode
+    display_name: Projectcode
+    column: ProjectCode
+  - name: SourceSystem
+    display_name: Sourcesystem
+    column: SourceSystem
+  - name: Product
+    display_name: Product
+    column: Product
+  - name: Region
+    display_name: Region
+    column: Region
+  - name: CustomerID
+    display_name: Customerid
+    column: CustomerID
+  - name: Entity
+    display_name: Entity
+    column: Entity
+  - name: Memo
+    display_name: Memo
+    column: Memo
+  - name: Currency
+    display_name: Currency
+    column: Currency
+  - name: _path
+    display_name: ' Path'
+    column: _path
+  - name: _file
+    display_name: ' File'
+    column: _file
+
+measures:
+  - name: total_debit_amount_measure
+    display_name: Total Debit Amount
+    expression: SUM(DebitAmount)
+    description: The total sum of all debit amounts recorded in the general ledger.
+    format_preset: humanize
+  - name: total_credit_amount_measure
+    display_name: Total Credit Amount
+    expression: SUM(CreditAmount)
+    description: The total sum of all credit amounts recorded in the general ledger.
+    format_preset: humanize
+  - name: average_debit_amount_measure
+    display_name: Average Debit Amount
+    expression: AVG(DebitAmount)
+    description: The average debit amount per transaction in the general ledger.
+    format_preset: humanize
+  - name: average_credit_amount_measure
+    display_name: Average Credit Amount
+    expression: AVG(CreditAmount)
+    description: The average credit amount per transaction in the general ledger.
+    format_preset: humanize
+  - name: max_debit_amount_measure
+    display_name: Maximum Debit Amount
+    expression: MAX(DebitAmount)
+    description: The maximum debit amount recorded in a single transaction in the
+      general ledger.
+    format_preset: humanize
+  - name: max_credit_amount_measure
+    display_name: Maximum Credit Amount
+    expression: MAX(CreditAmount)
+    description: The maximum credit amount recorded in a single transaction in the
+      general ledger.
+    format_preset: humanize
+  - name: min_debit_amount_measure
+    display_name: Minimum Debit Amount
+    expression: MIN(DebitAmount)
+    description: The minimum debit amount recorded in a single transaction in the
+      general ledger.
+    format_preset: humanize
+  - name: min_credit_amount_measure
+    display_name: Minimum Credit Amount
+    expression: MIN(CreditAmount)
+    description: The minimum credit amount recorded in a single transaction in the
+      general ledger.
+    format_preset: humanize
+  - name: total_transactions_measure
+    display_name: Total Transactions
+    expression: COUNT(JournalEntryID)
+    description: The total number of transactions recorded in the general ledger.
+    format_preset: humanize
+  - name: distinct_accounts_measure
+    display_name: Distinct Accounts
+    expression: COUNT(DISTINCT AccountNumber)
+    description: The number of distinct accounts involved in transactions in the
+      general ledger.
+    format_preset: humanize
+smallest_time_grain: day
